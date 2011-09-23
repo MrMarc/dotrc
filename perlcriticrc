@@ -1,0 +1,304 @@
+# Put Perl Critic customizations here. See details in documentation for
+# Configuration in the Perl::Critic docs.
+
+[Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr]
+# Use 4-argument substr instead of writing substr($foo, 2, 6) = $bar
+severity = 3
+
+[Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect]
+# Use Time::HiRes instead of something like select(undef, undef, undef, .05)
+severity = 5
+
+[Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval]
+# Write eval { my $foo; bar($foo) } instead of eval "my $foo; bar($foo);"
+severity = 5
+
+[Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan]
+# Write eval { $foo->can($name) } instead of UNIVERSAL::can($foo, $name)
+severity = 3
+
+[Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa]
+# Write eval { $foo->isa($pkg) } instead of UNIVERSAL::isa($foo, $pkg)
+severity = 3
+
+[Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep]
+# Write grep { $_ =~ /$pattern/ } @list instead of grep /$pattern/, @list
+severity = 4
+
+[Perl::Critic::Policy::BuiltinFunctions::RequireBlockMap]
+# Write map { $_ =~ /$pattern/ } @list instead of map /$pattern/, @list
+severity = 4
+
+[Perl::Critic::Policy::BuiltinFunctions::RequireGlobFunction]
+# Use glob q{*} instead of <*>
+severity = 5
+
+[Perl::Critic::Policy::BuiltinFunctions::RequireSimpleSortBlock]
+# Sort blocks should have a single statement
+severity = 2
+
+[Perl::Critic::Policy::ClassHierarchies::ProhibitExplicitISA]
+# Employ use base instead of @ISA
+severity = 3
+
+[Perl::Critic::Policy::ClassHierarchies::ProhibitOneArgBless]
+# Write bless {}, $class; instead of just bless {};
+severity = 5
+
+[Perl::Critic::Policy::CodeLayout::ProhibitHardTabs]
+# Use spaces instead of tabs.
+severity = 4
+
+[Perl::Critic::Policy::CodeLayout::ProhibitParensWithBuiltins]
+# Write open $handle, $path instead of open($handle, $path)
+severity = 1
+
+[Perl::Critic::Policy::CodeLayout::ProhibitQuotedWordLists]
+# Write qw(foo bar baz) instead of ('foo', 'bar', 'baz')
+severity = 2
+
+[Perl::Critic::Policy::CodeLayout::RequireTidyCode]
+# Must run code through perltidy.
+severity = 4
+
+[Perl::Critic::Policy::CodeLayout::RequireTrailingCommas]
+# Put a comma at the end of every multi-line list declaration, including the last one.
+severity = 3
+
+[Perl::Critic::Policy::ControlStructures::ProhibitCStyleForLoops]
+# Write for(0..20) instead of for($i=0; $i<=20; $i++)
+severity = 3
+
+[Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse]
+# Don't write long "if-elsif-elsif-elsif-elsif...else" chains.
+severity = 3
+
+[Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks]
+# Write if(! $condition) instead of unless($condition)
+severity = 4
+
+[Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode]
+# Don't write code after an unconditional die, exit, or next.
+severity = 4
+
+[Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks]
+# Write while(! $condition) instead of until($condition)
+severity = 4
+
+[Perl::Critic::Policy::Documentation::RequirePodAtEnd]
+# All POD should be after __END__
+severity = 2
+
+[Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators]
+# Discourage stuff like @files = `ls $directory`
+severity = 4
+
+[Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles]
+# Write open my $fh, q{<}, $filename; instead of open FH, q{<}, $filename;
+severity = 5
+
+[Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect]
+# Never write select($fh)
+severity = 4
+
+[Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop]
+# Write while( $line = <> ){...} instead of for(<>){...}
+severity = 4
+
+[Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen]
+# Write open $fh, q{<}, $filename; instead of open $fh, "<$filename";
+severity = 5
+
+[Perl::Critic::Policy::InputOutput::RequireBracedFileHandleWithPrint]
+# Write print {$FH} $foo, $bar; instead of print $FH $foo, $bar;
+severity = 3
+
+[Perl::Critic::Policy::Miscellanea::ProhibitFormats]
+# Do not use format.
+severity = 3
+
+[Perl::Critic::Policy::Miscellanea::ProhibitTies]
+# Do not use tie.
+severity = 4
+
+[Perl::Critic::Policy::Modules::ProhibitAutomaticExportation]
+# Export symbols via @EXPORT_OK or %EXPORT_TAGS instead of @EXPORT.
+severity = 3
+
+[Perl::Critic::Policy::Modules::ProhibitEvilModules]
+# Ban modules that aren't blessed by your shop.
+severity = 5
+
+[Perl::Critic::Policy::Modules::ProhibitMultiplePackages]
+# Put packages (especially subclasses) in separate files.
+severity = 4
+
+[Perl::Critic::Policy::Modules::RequireBarewordIncludes]
+# Write require Module instead of require 'Module.pm'
+severity = 5
+
+[Perl::Critic::Policy::Modules::RequireEndWithOne]
+# End each module with an explicitly 1; instead of some funky expression.
+severity = 4
+
+[Perl::Critic::Policy::Modules::RequireExplicitPackage]
+# Always make the package explicit.
+severity = 4
+
+[Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames]
+# Don't use vague variable or subroutine names like 'last' or 'record'.
+severity = 3
+
+[Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs]
+# Write sub my_function{} instead of sub MyFunction{}
+severity = 4
+
+[Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars]
+# Write $my_variable = 42 instead of $MyVariable = 42
+severity = 4
+
+[Perl::Critic::Policy::References::ProhibitDoubleSigils]
+# Write @{ $array_ref } instead of @$array_ref
+severity = 2
+
+[Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting]
+# Always use the /x modifier with regular expressions.
+severity = 1
+
+[Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching]
+# Always use the /m modifier with regular expressions.
+severity = 2
+
+[Perl::Critic::Policy::Subroutines::ProhibitAmpersandSigils]
+# Don't call functions with a leading ampersand sigil.
+severity = 2
+
+[Perl::Critic::Policy::Subroutines::ProhibitBuiltinHomonyms]
+# Don't declare your own open function.
+severity = 4
+
+[Perl::Critic::Policy::Subroutines::ProhibitExcessComplexity]
+# Minimize complexity by factoring code into smaller subroutines.
+severity = 2
+
+[Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef]
+# Return failure with bare return instead of return undef
+severity = 5
+
+[Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes]
+# Don't write sub my_function (@@) {}
+severity = 5
+
+[Perl::Critic::Policy::Subroutines::ProtectPrivateSubs]
+# Prevent access to private subs in other packages
+severity = 3
+
+[Perl::Critic::Policy::Subroutines::RequireFinalReturn]
+# End every path through a subroutine with an explicit return statement.
+severity = 4
+
+[Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict]
+# Prohibit various flavors of no strict
+severity = 1
+
+[Perl::Critic::Policy::TestingAndDebugging::ProhibitNoWarnings]
+# Prohibit various flavors of no warnings
+severity = 4
+
+[Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict]
+# Always use strict
+severity = 5
+
+[Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings]
+# Always use warnings
+severity = 4
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma]
+# Don't use constant $FOO => 15
+severity = 4
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes]
+# Write q{} instead of ''
+severity = 2
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters]
+# Write "\N{DELETE}" instead of "\x7F", etc.
+severity = 2
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals]
+# Always use single quotes for literal strings.
+severity = 3
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros]
+# Write oct(755) instead of 0755
+severity = 5
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators]
+# Write !$foo && $bar || $baz instead of not $foo && $bar or $baz
+severity = 4
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes]
+# Use q{} or qq{} instead of quotes for awkward-looking strings.
+severity = 2
+
+[Perl::Critic::Policy::ValuesAndExpressions::ProhibitVersionStrings]
+# Don't use strings like v1.4 or 1.4.5 when including other modules.
+severity = 3
+
+[Perl::Critic::Policy::ValuesAndExpressions::RequireInterpolationOfMetachars]
+# Warns that you might have used single quotes when you really wanted double-quotes.
+severity = 1
+
+[Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators]
+# Write 141_234_397.0145 instead of 141234397.0145
+severity = 2
+
+[Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator]
+# Write print <<'THE_END' or print <<"THE_END"
+severity = 3
+
+[Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator]
+# Write <<'THE_END'; instead of <<'theEnd';
+severity = 1
+
+[Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations]
+# Do not write my $foo = $bar if $baz;
+severity = 5
+
+[Perl::Critic::Policy::Variables::ProhibitLocalVars]
+# Use my instead of local, except when you have to.
+severity = 2
+
+[Perl::Critic::Policy::Variables::ProhibitMatchVars]
+# Avoid $`, $&, $' and their English equivalents.
+severity = 4
+
+[Perl::Critic::Policy::Variables::ProhibitPackageVars]
+# Eliminate globals declared with our or use vars
+severity = 1
+
+[Perl::Critic::Policy::Variables::ProhibitPunctuationVars]
+# Write $EVAL_ERROR instead of $@
+severity = 2
+
+[Perl::Critic::Policy::Variables::ProtectPrivateVars]
+# Prevent access to private vars in other packages
+severity = 3
+
+[Perl::Critic::Policy::Variables::RequireInitializationForLocalVars]
+# Write local $foo = $bar; instead of just local $foo;
+severity = 3
+
+[-Perl::Critic::Policy::Documentation::RequirePodSections]
+# Organize your POD into the customary sections.
+
+[-Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls]
+# Write if($condition){ do_something() } instead of do_something() if $condition
+
+[-Perl::Critic::Policy::Miscellanea::RequireRcsKeywords]
+# Put RCS source-control keywords in every file.
+# BUT... may make sense to add my own SVN module for this...
+
+[-Perl::Critic::Policy::Modules::RequireVersionVar]
+# Give every module a $VERSION number.
+
