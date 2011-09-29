@@ -1,3 +1,14 @@
-set gfn=Consolas:h18
+" These settings are for easytags
+set notagbsearch
+set ignorecase
+
 let g:easytags_file = '/tmp/vimtags'
+
+" This command opens a Markdown file in Marked
+" Could be done based on filetype
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+" Set the font for MacVim
+if has("gui_running")
+  set gfn=Consolas:h18
+endif
