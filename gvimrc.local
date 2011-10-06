@@ -12,3 +12,9 @@ let g:easytags_file = '/tmp/vimtags'
 if has("gui_running")
   set gfn=Consolas:h18
 endif
+
+" Change the folding settings for Perl code
+augroup marc_perl_settings
+  au BufEnter *.pl setl foldmarker={,} foldmethod=marker foldcolumn=3 foldlevel=99 mouse=a
+augroup END
+
