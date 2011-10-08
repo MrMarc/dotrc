@@ -4,6 +4,16 @@ set ignorecase
 
 let g:easytags_file = '/tmp/vimtags'
 
+" Allow unsaved buffers to be hidden so that we
+" dont' have to resave scp based buffers all the time
+set bufhidden=hide
+
+set wildmenu
+set wildignorecase
+
+let mapleader=","
+let g:mapleader=","
+
 " This command opens a Markdown file in Marked
 " Could be done based on filetype
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
@@ -11,6 +21,10 @@ let g:easytags_file = '/tmp/vimtags'
 " Set the font for MacVim
 if has("gui_running")
   set gfn=Consolas:h18
+
+  " Remap Command-T to PeepOpen when there's a GUI
+  macmenu &File.New\ Tab key=<nop>
+  map <silent><D-t> <Plug>PeepOpen
 endif
 
 " Change the folding settings for Perl code
