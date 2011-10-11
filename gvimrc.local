@@ -11,9 +11,6 @@ set bufhidden=hide
 set wildmenu
 set wildignorecase
 
-let mapleader=","
-let g:mapleader=","
-
 " This command opens a Markdown file in Marked
 " Could be done based on filetype
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
@@ -27,8 +24,21 @@ if has("gui_running")
   map <silent><D-t> <Plug>PeepOpen
 endif
 
-" Change the folding settings for Perl code
-augroup marc_perl_settings
-  au BufEnter *.pl setl foldmarker={,} foldmethod=marker foldcolumn=3 foldlevel=99 mouse=a
-augroup END
+if has("autocmd")
+  " Auto load the changes to this file.
+  autocmd bufwritepost ~/dotrc/gvimrc.local source ~/dotrc/gvimrc.local
 
+  " Change the folding settings for Perl code
+  augroup marc_perl_settings
+    au BufEnter *.pl setl foldmarker={,} foldmethod=marker foldcolumn=3 foldlevel=99 mouse=a
+augroup END
+endif
+
+" Editing this file often enough so add a shortcut
+nmap ,v :tabedit ~/dotrc/gvimrc.local<CR>
+map ,v :tabedit ~/dotrc/gvimrc.local<CR>
+
+let mapleader=","
+let g:mapleader=","
+
+set updatetime=4000
