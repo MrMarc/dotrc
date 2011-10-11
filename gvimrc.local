@@ -38,6 +38,38 @@ endif
 nmap ,v :tabedit ~/dotrc/gvimrc.local<CR>
 map ,v :tabedit ~/dotrc/gvimrc.local<CR>
 
+" Add values for MiniBuifExplorer
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplModSelTarget = 1
+
+" Options for ShowMarks
+"let g:showmarks_enable = 1
+
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let showmarks_ignore_type = "hq"
+
+" Hilight the entire lien
+let showmarks_hlline_lower = 1
+let showmarks_hlline_upper = 1
+
+" ======================================================== 
+" Custom colours for ShowMarks
+" ======================================================== 
+
+" For marks a-z
+hi clear ShowMarksHLl
+"hi ShowMarksHLl term=bold cterm=none ctermbg=Blue gui=none guibg=Blue
+hi ShowMarksHLl term=bold cterm=bold ctermbg=LightRed ctermfg=DarkRed gui=bold guibg=LightRed guifg=DarkRed
+" For marks A-Z
+hi clear ShowMarksHLu
+hi ShowMarksHLu term=bold cterm=bold ctermbg=LightRed ctermfg=DarkRed gui=bold guibg=LightRed guifg=DarkRed
+" For all other marks
+hi clear ShowMarksHLo
+hi ShowMarksHLo term=bold cterm=bold ctermbg=LightYellow ctermfg=DarkYellow gui=bold guibg=LightYellow guifg=DarkYellow
+" For multiple marks on the same line.
+hi clear ShowMarksHLm
+hi ShowMarksHLm term=bold cterm=none ctermbg=Blue gui=none guibg=SlateBlue
+
 let mapleader=","
 let g:mapleader=","
 
