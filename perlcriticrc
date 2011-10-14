@@ -149,13 +149,13 @@ severity = 4
 # Don't use vague variable or subroutine names like 'last' or 'record'.
 severity = 3
 
-[Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs]
+[- Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs]
 # Write sub my_function{} instead of sub MyFunction{}
-severity = 4
+# severity = 4
 
-[Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars]
+[- Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars]
 # Write $my_variable = 42 instead of $MyVariable = 42
-severity = 4
+# severity = 4
 
 [Perl::Critic::Policy::References::ProhibitDoubleSigils]
 # Write @{ $array_ref } instead of @$array_ref
