@@ -75,6 +75,4 @@ let g:mapleader=","
 
 set updatetime=4000
 
-" Options for VimDebug
-let g:DBGRconsoleHeight   = 7
-let g:DBGRlineNumbers     = 1
+let g:TagmaTasksTokens = ['FIXME','TODO','NOTE','TODO:mpb']
