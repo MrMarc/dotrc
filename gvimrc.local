@@ -30,8 +30,8 @@ if has("autocmd")
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
-    au BufEnter *.pl setl foldmarker={,} foldmethod=marker foldcolumn=3 foldlevel=99 mouse=a
-augroup END
+    au BufEnter *.pl setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a
+  augroup END
 endif
 
 " Editing this file often enough so add a shortcut
@@ -76,3 +76,9 @@ let g:mapleader=","
 set updatetime=4000
 
 let g:TagmaTasksTokens = ['FIXME','TODO','NOTE','TODO:mpb']
+
+"set hidden
+syntax sync fromstart
+
+let perl_fold=1
+let perl_fold_blocks=1

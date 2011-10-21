@@ -11,3 +11,4 @@ vim_plugin_task "minibufexplorer",  "git://github.com/fholgado/minibufexpl.vim.g
 vim_plugin_task "showmarks",        "git://github.com/vim-scripts/ShowMarks.git"
 vim_plugin_task "TagmaTasks",       "git://github.com/vim-scripts/TagmaTasks.git"
 vim_plugin_task "TagHighlight",     "git://github.com/vim-scripts/TagHighlight.git"
+vim_plugin_task "xmledit",          "git://github.com/sukima/xmledit.git"
