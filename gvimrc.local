@@ -17,7 +17,8 @@ set wildignorecase
 
 " Set the font for MacVim
 if has("gui_running")
-  set gfn=Consolas:h18
+  " set gfn=Consolas:h18
+  set gfn=Menlo\ Bold:h15
 
   " Remap Command-T to PeepOpen when there's a GUI
   macmenu &File.New\ Tab key=<nop>
