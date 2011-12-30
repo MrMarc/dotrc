@@ -6,10 +6,10 @@ export CC=gcc-4.2
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
-alias uw='scp -C -q -r /Users/marc/Documents/workspace/jboss-5.1.0.GA/server/default/deploy/signiant.war/* root@confluence:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/signiant.war'
-alias uj='scp -C -q /Users/marc/Documents/workspace/manager_jar/dist/signiant.jar root@confluence:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/'
-alias uc='scp -C -q /Users/marc/Documents/workspace/customizer/dist/signiant_customizer.war root@confluence:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/'
-alias bounce='ssh root@confluence /usr/signiant/dds/init/siginit restart sigjboss'
+alias uw='scp -C -q -r /Users/marc/Documents/workspace/jboss-5.1.0.GA/server/default/deploy/signiant.war/* root@mgr2:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/signiant.war'
+alias uj='scp -C -q /Users/marc/Documents/workspace/manager_jar/dist/signiant.jar root@mgr2:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/'
+alias uc='scp -C -q /Users/marc/Documents/workspace/customizer/dist/signiant_customizer.war root@mgr2:/usr/signiant/dds/3rdparty/jboss/server/default/deploy/'
+alias bounce='ssh root@mgr2 /usr/signiant/dds/init/siginit restart sigjboss'
 alias uab='uc;uw;uj;bounce'
 
 alias m='mvim --remote-silent'
