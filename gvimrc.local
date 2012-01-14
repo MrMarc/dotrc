@@ -83,3 +83,6 @@ syntax sync fromstart
 
 let perl_fold=1
 let perl_fold_blocks=1
+
+color ir_black
+set guioptions-=T
