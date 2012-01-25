@@ -1,15 +1,16 @@
-vim_plugin_task "perl-support",     "git://github.com/vim-scripts/perl-support.vim.git"
-vim_plugin_task "a",                "git://github.com/vim-scripts/a.vim.git"
-vim_plugin_task "closetag",         "git://github.com/vim-scripts/closetag.vim.git"
-vim_plugin_task "tagbar",           "git://github.com/vim-scripts/Tagbar.git"
-vim_plugin_task "easytags",         "git://github.com/vim-scripts/easytags.vim.git"
-vim_plugin_task "matchit",          "git://github.com/vim-scripts/matchit.zip.git"
-vim_plugin_task "showmarks",        "git://github.com/vim-scripts/ShowMarks.git"
-vim_plugin_task "TagmaTasks",       "git://github.com/vim-scripts/TagmaTasks.git"
-vim_plugin_task "TagHighlight",     "git://github.com/vim-scripts/TagHighlight.git"
-vim_plugin_task "VOoM",             "git://github.com/vim-scripts/VOoM.git"
-vim_plugin_task "minibufexplorer",  "git://github.com/vim-scripts/minibufexpl.vim.git"
-vim_plugin_task "ack",              "git://github.com/vim-scripts/ack.vim.git"
-vim_plugin_task "xmledit",          "git://github.com/vim-scripts/xmledit.git"
-vim_plugin_task "peepopen",         "git://github.com/mrchrisadams/vim-peepopen.git"
-vim_plugin_task "xpath",            "git://github.com/actionshrimp/vim-xpath.git"
+ git submodule add  git://github.com/vim-scripts/perl-support.vim.git
+ git submodule add  git://github.com/vim-scripts/a.vim.git
+ git submodule add  git://github.com/vim-scripts/closetag.vim.git
+ git submodule add  git://github.com/vim-scripts/Tagbar.git
+ git submodule add  git://github.com/vim-scripts/easytags.vim.git
+ git submodule add  git://github.com/vim-scripts/matchit.zip.git
+ git submodule add  git://github.com/vim-scripts/ShowMarks.git
+ git submodule add  git://github.com/vim-scripts/TagmaTasks.git
+ git submodule add  git://github.com/vim-scripts/TagHighlight.git
+ git submodule add  git://github.com/vim-scripts/VOoM.git
+ git submodule add  git://github.com/vim-scripts/minibufexpl.vim.git
+ git submodule add  git://github.com/vim-scripts/ack.vim.git
+ git submodule add  git://github.com/vim-scripts/xmledit.git
+ git submodule add  git://github.com/mrchrisadams/vim-peepopen.git
+ git submodule add  git://github.com/thanaelkane/vim-indent-guides.git
+ git submodule add  git://github.com/vim-scripts/Rainbow-Parenthesis.git
