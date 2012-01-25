@@ -3,13 +3,11 @@
  git submodule add  git://github.com/vim-scripts/closetag.vim.git
  git submodule add  git://github.com/vim-scripts/Tagbar.git
  git submodule add  git://github.com/vim-scripts/easytags.vim.git
- git submodule add  git://github.com/vim-scripts/matchit.zip.git
  git submodule add  git://github.com/vim-scripts/ShowMarks.git
  git submodule add  git://github.com/vim-scripts/TagmaTasks.git
  git submodule add  git://github.com/vim-scripts/TagHighlight.git
  git submodule add  git://github.com/vim-scripts/VOoM.git
  git submodule add  git://github.com/vim-scripts/minibufexpl.vim.git
- git submodule add  git://github.com/vim-scripts/ack.vim.git
  git submodule add  git://github.com/vim-scripts/xmledit.git
  git submodule add  git://github.com/mrchrisadams/vim-peepopen.git
  git submodule add  git://github.com/thanaelkane/vim-indent-guides.git
