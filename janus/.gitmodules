@@ -1,0 +1,3 @@
+[submodule "Decho"]
+	path = Decho
+	url = git://github.com/vim-scripts/Decho.git
