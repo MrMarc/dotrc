@@ -12,3 +12,4 @@
  git submodule add  git://github.com/mrchrisadams/vim-peepopen.git
  git submodule add  git://github.com/thanaelkane/vim-indent-guides.git
  git submodule add  git://github.com/vim-scripts/Rainbow-Parenthesis.git
+ git submodule add  git://github.com/vim-scripts/Decho.git

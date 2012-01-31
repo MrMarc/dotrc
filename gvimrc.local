@@ -11,18 +11,23 @@ set bufhidden=hide
 set wildmenu
 set wildignorecase
 
-" This command opens a Markdown file in Marked
-" Could be done based on filetype
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-
-" Set the font for MacVim
+" Use the same rc file for both
+" cmd line vim and MacVim.
+" Makes debugging plugins easier
 if has("gui_running")
-  " set gfn=Consolas:h18
+  " Set the Gui font
   set gfn=Menlo\ Bold:h15
+
+  " Remove the toolbar - don't like it
+  set guioptions-=T
 
   " Remap Command-T to PeepOpen when there's a GUI
   macmenu &File.New\ Tab key=<nop>
   map <silent><D-t> <Plug>PeepOpen
+
+  " This command opens a Markdown file in Marked
+  " Could be done based on filetype
+  :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 endif
 
 if has("autocmd")
@@ -84,5 +89,10 @@ syntax sync fromstart
 let perl_fold=1
 let perl_fold_blocks=1
 
+" Change gundo to show a change preview at the bottom of the screen
+let g:gundo_preview_bottom=1
+
+" Change the indent guides line to only take one (the first) column
+let g:indent_guides_guide_size=1
+
 color ir_black
-set guioptions-=T
