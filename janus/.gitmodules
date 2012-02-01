@@ -43,3 +43,6 @@
 [submodule "Rainbow-Parenthesis"]
 	path = Rainbow-Parenthesis
 	url = git://github.com/vim-scripts/Rainbow-Parenthesis.git
+[submodule "vim-perl-xpath"]
+	path = vim-perl-xpath
+	url = git://github.com/MrMarc/vim-perl-xpath.git
