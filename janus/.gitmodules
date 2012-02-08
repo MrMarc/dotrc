@@ -46,3 +46,6 @@
 [submodule "vim-perl-xpath"]
 	path = vim-perl-xpath
 	url = git://github.com/MrMarc/vim-perl-xpath.git
+[submodule "headlights"]
+	path = headlights
+	url = git://github.com/mbadran/headlights.git

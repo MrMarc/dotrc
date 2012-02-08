@@ -8,8 +8,16 @@ let g:easytags_file = '/tmp/vimtags'
 " dont' have to resave scp based buffers all the time
 set bufhidden=hide
 
+" Tab completion options
+" Try to make it more like bash'es completion
 set wildmenu
 set wildignorecase
+set wildmode=longest,list
+
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
 
 " Use the same rc file for both
 " cmd line vim and MacVim.
@@ -32,7 +40,7 @@ endif
 
 if has("autocmd")
   " Auto load the changes to this file.
-  autocmd bufwritepost ~/dotrc/gvimrc.local source ~/dotrc/gvimrc.local
+  autocmd bufwritepost ~/dotrc/vimrc source ~/dotrc/vimrc
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
@@ -41,8 +49,8 @@ if has("autocmd")
 endif
 
 " Editing this file often enough so add a shortcut
-nmap ,v :tabedit ~/dotrc/gvimrc.local<CR>
-map ,v :tabedit ~/dotrc/gvimrc.local<CR>
+nmap ,v :tabedit ~/dotrc/vimrc<CR>
+map ,v :tabedit ~/dotrc/vimrc<CR>
 
 " Add values for MiniBuifExplorer
 let g:miniBufExplMapWindowNavArrows = 1
@@ -96,3 +104,12 @@ let g:gundo_preview_bottom=1
 let g:indent_guides_guide_size=1
 
 color ir_black
+
+" Try to teach myself not to rely on the arrow keys so much ...
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" Try to use the home row escape as well
+inoremap jj <Esc>
