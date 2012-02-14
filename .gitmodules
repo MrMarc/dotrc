@@ -1,0 +1,6 @@
+[submodule "janus/badwolf"]
+	path = janus/badwolf
+	url = git://github.com/sjl/badwolf.git
+[submodule "janus/ShowMarks"]
+	path = janus/ShowMarks
+	url = git://github.com/VimEz/ShowMarks.git
