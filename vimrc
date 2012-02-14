@@ -36,6 +36,13 @@ if has("gui_running")
   " This command opens a Markdown file in Marked
   " Could be done based on filetype
   :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+  color badwolf
+
+else
+
+  color ir_black
+
 endif
 
 if has("autocmd")
@@ -94,16 +101,11 @@ let g:TagmaTasksTokens = ['FIXME','TODO','NOTE','TODO:mpb']
 "set hidden
 syntax sync fromstart
 
-let perl_fold=1
-let perl_fold_blocks=1
-
 " Change gundo to show a change preview at the bottom of the screen
 let g:gundo_preview_bottom=1
 
 " Change the indent guides line to only take one (the first) column
 let g:indent_guides_guide_size=1
-
-color ir_black
 
 " Try to teach myself not to rely on the arrow keys so much ...
 noremap <Up> <nop>
