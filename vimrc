@@ -38,6 +38,7 @@ if has("gui_running")
   :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
   color badwolf
+  "color inkpot
 
 else
 
@@ -54,6 +55,12 @@ if has("autocmd")
     au BufEnter *.pl setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a
   augroup END
 endif
+
+let perl_fold=1
+let perl_fold_blocks=1
+
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
 
 " Editing this file often enough so add a shortcut
 nmap ,v :tabedit ~/dotrc/vimrc<CR>
