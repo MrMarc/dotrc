@@ -49,3 +49,6 @@
 [submodule "headlights"]
 	path = headlights
 	url = git://github.com/mbadran/headlights.git
+[submodule "minibufexpl.vim.git"]
+	path = minibufexpl.vim.git
+	url = git://github.com/fholgado/minibufexpl.vim.git

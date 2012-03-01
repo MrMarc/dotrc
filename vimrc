@@ -19,12 +19,19 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
 
+set nocompatible
+set laststatus=2
+set t_Co=256
+
 " Use the same rc file for both
 " cmd line vim and MacVim.
 " Makes debugging plugins easier
 if has("gui_running")
   " Set the Gui font
-  set gfn=Menlo\ Bold:h15
+  "set guifont=Menlo\ Bold:h15
+  "set guifont=Inconsolata-dz\ for\ Powerline:h17
+  set guifont=Menlo\ for\ Powerline:h17
+  "set guifont=Consolas:h17
 
   " Remove the toolbar - don't like it
   set guioptions-=T
@@ -33,18 +40,17 @@ if has("gui_running")
   macmenu &File.New\ Tab key=<nop>
   map <silent><D-t> <Plug>PeepOpen
 
-  " This command opens a Markdown file in Marked
+  " This command opens a Markdown file in Marked .
   " Could be done based on filetype
   :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
-  color badwolf
-  "color inkpot
-
 else
 
-  color ir_black
+  map <D-t> :CtrlP<CR>
 
 endif
+
+color badwolf
 
 if has("autocmd")
   " Auto load the changes to this file.
@@ -52,9 +58,12 @@ if has("autocmd")
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
-    au BufEnter *.pl setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a
+    au BufEnter *.pl setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
   augroup END
 endif
+
+filetype plugin on
+filetype indent on
 
 let perl_fold=1
 let perl_fold_blocks=1
@@ -66,12 +75,16 @@ let xml_syntax_folding=1      " XML
 nmap ,v :tabedit ~/dotrc/vimrc<CR>
 map ,v :tabedit ~/dotrc/vimrc<CR>
 
+" Add my own mapping for CtrlP
+nmap ,t :CtrlP<CR>
+map ,t :CtrlP<CR>
+
 " Add values for MiniBuifExplorer
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplModSelTarget = 1
 
 " Options for ShowMarks
-"let g:showmarks_enable = 1
+let g:showmarks_enable = 1
 
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let showmarks_ignore_type = "hq"
@@ -104,6 +117,8 @@ let g:mapleader=","
 set updatetime=4000
 
 let g:TagmaTasksTokens = ['FIXME','TODO','NOTE','TODO:mpb']
+
+let g:Powerline_symbols = 'fancy'
 
 "set hidden
 syntax sync fromstart

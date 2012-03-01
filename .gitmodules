@@ -4,3 +4,33 @@
 [submodule "janus/ShowMarks"]
 	path = janus/ShowMarks
 	url = git://github.com/VimEz/ShowMarks.git
+[submodule "janus/Command-T"]
+	path = janus/Command-T
+	url = git://github.com/vim-scripts/Command-T.git
+[submodule "janus/VimDebug"]
+	path = janus/VimDebug
+	url = git://github.com/kablamo/VimDebug.git
+[submodule "janus/vim-powerline"]
+	path = janus/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "janus/perlomni"]
+	path = janus/perlomni
+	url = git://github.com/c9s/perlomni.vim.git
+[submodule "janus/minibufexpl.vim.git"]
+	path = janus/minibufexpl.vim.git
+	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "janus/cocoa.vim"]
+	path = janus/cocoa.vim
+	url = https://github.com/stephenprater/cocoa.vim.git
+[submodule "janus/vim-repeat.vim"]
+	path = janus/vim-repeat.vim
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "janus/perl-support.vim.git"]
+	path = janus/perl-support.vim.git
+	url = https://github.com/vim-scripts/perl-support.vim.git
+[submodule "janus/perlomni.vim"]
+	path = janus/perlomni.vim
+	url = https://github.com/c9s/perlomni.vim.git
+[submodule "janus/perl-support.vim"]
+	path = janus/perl-support.vim
+	url = https://github.com/vim-scripts/perl-support.vim.git

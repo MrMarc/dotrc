@@ -16,17 +16,12 @@ alias m='mvim --remote-silent'
 alias vim='mvim -v'
 alias vi='mvim -v'
 
-export PATH=/opt/local/bin:/opt/local/sbin:/opt/subversion/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/sbin:/opt/subversion/bin:$PATH
 
 
 ##
 # Your previous /Users/marc/.bash_profile file was backed up as /Users/marc/.bash_profile.macports-saved_2011-03-17_at_11:55:11
 ##
-
-# MacPorts Installer addition on 2011-03-17_at_11:55:11: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 
 # Add Tab-completion for SSH host aliases
 #complete -o default -o nospace -W "$(/usr/bin/env ruby -ne 'puts $_.split(/[,s]+/)[1..-1].reject{|host| host.match(/*|?/)} if $_.match(/^s*Hosts+/);' < $HOME/.ssh/config)" scp sftp ssh
