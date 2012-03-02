@@ -2,7 +2,7 @@
 #! /bin/sh
 #LC_ALL=C
 #export LC_ALL
-export CC=gcc-4.2
+#export CC=gcc-4.2
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 

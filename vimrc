@@ -1,9 +1,3 @@
-" These settings are for easytags
-set notagbsearch
-set ignorecase
-
-let g:easytags_file = '/tmp/vimtags'
-
 " Allow unsaved buffers to be hidden so that we
 " dont' have to resave scp based buffers all the time
 set bufhidden=hide
@@ -19,10 +13,6 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
 
-set nocompatible
-set laststatus=2
-set t_Co=256
-
 " Use the same rc file for both
 " cmd line vim and MacVim.
 " Makes debugging plugins easier
@@ -30,8 +20,8 @@ if has("gui_running")
   " Set the Gui font
   "set guifont=Menlo\ Bold:h15
   "set guifont=Inconsolata-dz\ for\ Powerline:h17
-  set guifont=Menlo\ for\ Powerline:h17
-  "set guifont=Consolas:h17
+  "set guifont=Menlo\ for\ Powerline:h17
+  set guifont=Consolas\ for\ Powerline:h17
 
   " Remove the toolbar - don't like it
   set guioptions-=T
@@ -58,7 +48,7 @@ if has("autocmd")
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
-    au BufEnter *.pl setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
+    au BufEnter *.pl setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a "complete-=i
   augroup END
 endif
 
@@ -82,6 +72,8 @@ map ,t :CtrlP<CR>
 " Add values for MiniBuifExplorer
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplModSelTarget = 1
+" Always open miniBufExplorer
+let g:miniBufExplorerMoreThanOne=0
 
 " Options for ShowMarks
 let g:showmarks_enable = 1
@@ -111,23 +103,40 @@ hi ShowMarksHLo term=bold cterm=bold ctermbg=LightYellow ctermfg=DarkYellow gui=
 hi clear ShowMarksHLm
 hi ShowMarksHLm term=bold cterm=none ctermbg=Blue gui=none guibg=SlateBlue
 
-let mapleader=","
-let g:mapleader=","
-
-set updatetime=4000
-
+" Add my typical TODO marker
 let g:TagmaTasksTokens = ['FIXME','TODO','NOTE','TODO:mpb']
 
+" Trick out the status line as much as possible
 let g:Powerline_symbols = 'fancy'
-
-"set hidden
-syntax sync fromstart
+" These options make Powerline work better
+set nocompatible
+set laststatus=2
+set t_Co=256
 
 " Change gundo to show a change preview at the bottom of the screen
 let g:gundo_preview_bottom=1
 
 " Change the indent guides line to only take one (the first) column
 let g:indent_guides_guide_size=1
+
+" Set up the location for easytags
+let g:easytags_file = '/tmp/vimtags'
+" These settings are for easytags
+set notagbsearch
+set ignorecase
+
+"set hidden
+
+let mapleader=","
+let g:mapleader=","
+
+" TODO:mpb is this necessary?
+" was running into visual update problems with a plugin until I added 
+" this - now can't remember which one it was. Find out and label/remove
+set updatetime=4000
+
+" Helps perl syntax highlighting
+syntax sync fromstart
 
 " Try to teach myself not to rely on the arrow keys so much ...
 noremap <Up> <nop>
