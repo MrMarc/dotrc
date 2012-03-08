@@ -37,3 +37,45 @@
 [submodule "janus/vim-indent-guides"]
 	path = janus/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "janus/xmledit"]
+	path = janus/xmledit
+	url = git://github.com/vim-scripts/xmledit.git
+[submodule "a.vim"]
+	path = a.vim
+	url = git://github.com/vim-scripts/a.vim.git
+[submodule "janus/a.vim"]
+	path = janus/a.vim
+	url = git://github.com/vim-scripts/a.vim.git
+[submodule "janus/closetag.vim"]
+	path = janus/closetag.vim
+	url = git://github.com/vim-scripts/closetag.vim.git
+[submodule "Tagbar"]
+	path = Tagbar
+	url = git://github.com/vim-scripts/Tagbar.git
+[submodule "janus/Tagbar"]
+	path = janus/Tagbar
+	url = git://github.com/vim-scripts/Tagbar.git
+[submodule "janus/easytags.vim"]
+	path = janus/easytags.vim
+	url = git://github.com/vim-scripts/easytags.vim.git
+[submodule "janus/TagmaTasks"]
+	path = janus/TagmaTasks
+	url = git://github.com/vim-scripts/TagmaTasks.git
+[submodule "janus/Rainbow-Parenthesis"]
+	path = janus/Rainbow-Parenthesis
+	url = git://github.com/vim-scripts/Rainbow-Parenthesis.git
+[submodule "janus/VOoM"]
+	path = janus/VOoM
+	url = git://github.com/vim-scripts/VOoM.git
+[submodule "janus/vim-peepopen"]
+	path = janus/vim-peepopen
+	url = git://github.com/mrchrisadams/vim-peepopen.git
+[submodule "janus/vim-perl-xpath"]
+	path = janus/vim-perl-xpath
+	url = git://github.com/MrMarc/vim-perl-xpath.git
+[submodule "janus/headlights"]
+	path = janus/headlights
+	url = git://github.com/mbadran/headlights.git
+[submodule "janus/TagHighlight"]
+	path = janus/TagHighlight
+	url = git://github.com/vim-scripts/TagHighlight.git
