@@ -34,3 +34,6 @@
 [submodule "janus/perl-support.vim"]
 	path = janus/perl-support.vim
 	url = https://github.com/vim-scripts/perl-support.vim.git
+[submodule "janus/vim-indent-guides"]
+	path = janus/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
