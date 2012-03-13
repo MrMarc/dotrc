@@ -149,3 +149,11 @@ noremap <Right> <nop>
 
 " Try to use the home row escape as well
 inoremap jj <Esc>
+
+" Trying VimDB out to query key commands
+" https://github.com/cldwalker/vimdb#readme
+map <Leader>vd :!rbenv exec vimdb 
+
+" Reselect the visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
