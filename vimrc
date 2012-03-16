@@ -157,3 +157,15 @@ map <Leader>vd :!rbenv exec vimdb
 " Reselect the visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
+
+function! HTMLDecode()
+perl << EOF
+ use HTML::Entities;
+ @pos = $curwin->Cursor();
+ $line = $curbuf->Get($pos[0]);
+ $encvalue = decode_entities($line);
+ $curbuf->Set($pos[0],$encvalue)
+EOF
+endfunction
+
+map <Leader>H :call HTMLDecode()<CR>

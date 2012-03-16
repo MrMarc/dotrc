@@ -19,9 +19,6 @@
 [submodule "janus/minibufexpl.vim.git"]
 	path = janus/minibufexpl.vim.git
 	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "janus/cocoa.vim"]
-	path = janus/cocoa.vim
-	url = https://github.com/stephenprater/cocoa.vim.git
 [submodule "janus/vim-repeat.vim"]
 	path = janus/vim-repeat.vim
 	url = https://github.com/tpope/vim-repeat.git
@@ -79,3 +76,6 @@
 [submodule "janus/TagHighlight"]
 	path = janus/TagHighlight
 	url = git://github.com/vim-scripts/TagHighlight.git
+[submodule "janus/cocoa"]
+	path = janus/cocoa
+	url = git://github.com/msanders/cocoa.vim.git
