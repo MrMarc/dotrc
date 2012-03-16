@@ -65,8 +65,8 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 " Editing this file often enough so add a shortcut
-nmap ,v :tabedit ~/dotrc/vimrc<CR>
-map ,v :tabedit ~/dotrc/vimrc<CR>
+nmap ,v :edit ~/dotrc/vimrc<CR>
+map ,v :edit ~/dotrc/vimrc<CR>
 
 " Add my own mapping for CtrlP
 nmap ,t :CtrlP<CR>
