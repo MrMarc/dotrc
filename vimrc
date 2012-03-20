@@ -37,6 +37,8 @@ if has("gui_running")
 else
 
   map <D-t> :CtrlP<CR>
+  " Enable mouse movement - nice with a trackpad
+  set mouse=a
 
 endif
 
@@ -72,8 +74,7 @@ map ,v :edit ~/dotrc/vimrc<CR>
 nmap ,t :CtrlP<CR>
 map ,t :CtrlP<CR>
 
-" Add values for MiniBuifExplorer
-let g:miniBufExplMapWindowNavArrows = 1
+" Add values for MiniBufExplorer
 let g:miniBufExplModSelTarget = 1
 " Always open miniBufExplorer
 let g:miniBufExplorerMoreThanOne=0
