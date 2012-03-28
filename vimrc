@@ -169,4 +169,15 @@ perl << EOF
 EOF
 endfunction
 
+function! HTMLEncode()
+perl << EOF
+ use HTML::Entities;
+ @pos = $curwin->Cursor();
+ $line = $curbuf->Get($pos[0]);
+ $encvalue = encode_entities($line);
+ $curbuf->Set($pos[0],$encvalue)
+EOF
+endfunction
+
 map <Leader>H :call HTMLDecode()<CR>
+map <Leader>h :call HTMLEncode()<CR>
