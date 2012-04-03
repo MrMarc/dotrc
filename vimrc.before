@@ -2,3 +2,7 @@ let g:Powerline_symbols = 'fancy'
 set nocompatible
 set laststatus=2
 set t_Co=256
+
+call janus#disable_plugin('snipmate')
+call janus#disable_plugin('snipmate-snipets')
+call janus#disable_plugin('perlomni')

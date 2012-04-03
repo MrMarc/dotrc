@@ -16,6 +16,10 @@ alias m='mvim --remote-silent'
 alias vim='mvim -v'
 alias vi='mvim -v'
 
+# Set 'vi' command editing mode
+# How did I not know about this before?
+set -o vi
+
 export PATH=/usr/local/bin:/usr/local/sbin:/sbin:/opt/subversion/bin:$PATH
 
 

@@ -1,0 +1,38 @@
+snippet sigvar "Format a Signiant variable"
+my $${1:var} =<<'__${1/\w/\U$0\E/g}__';
+${VISUAL}$0
+__${1/\w/\U$0\E/g}__
+$$1 = ModifyInputValue( $$1, 0 );
+
+endsnippet
+
+global !p
+def complete(t, opts):
+  if t:
+    opts = [ m[len(t):] for m in opts if m.startswith(t) ]
+  if len(opts) == 1:
+    return opts[0]
+  return '('+'|'.join(opts)+')'
+endglobal
+
+snippet SPL "Format a SigPrintLog line"
+SigPrintLog( "${VISUAL}$1", LOG$2`!p snip.rv=complete( t[2], ['INFO','ERROR','WARN','DEBUG'])` );
+endsnippet
+
+snippet SSO "Send a Signiant output"
+SigSetOutput( "${VISUAL}$1", GetUtf8String($2));
+endsnippet
+
+snippet udd "Use Data::Dumper"
+use Data::Dumper;
+endsnippet
+
+snippet dbstop "Make the debugger stop automatically"
+$DB::start = 1;
+endsnippet
+
+snippet hered
+my $${1:var} =<<"__${1/\w/\U$0\E/g}__";
+${VISUAL}$2
+__${1/\w/\U$0\E/g}__
+endsnippet

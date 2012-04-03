@@ -181,3 +181,9 @@ endfunction
 
 map <Leader>H :call HTMLDecode()<CR>
 map <Leader>h :call HTMLEncode()<CR>
+
+" TODO:mpb Check the values for the directories below
+let g:UltiSnipsDontReverseSearchPath="1"
+let g:UltiSnipsSnippetDirectories=["/Volumes/MacintoshHD/Users/marc/dotrc/MySnippets","Ultisnips"]
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+imap <silent><D-right> <C-R>=UltiSnips_JumpForwards()<CR>

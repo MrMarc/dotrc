@@ -79,3 +79,15 @@
 [submodule "janus/cocoa"]
 	path = janus/cocoa
 	url = git://github.com/msanders/cocoa.vim.git
+[submodule "janus/jdbvim"]
+	path = janus/jdbvim
+	url = git://github.com/VictorDenisov/jdbvim.git
+[submodule "janus/vim-smartinput"]
+	path = janus/vim-smartinput
+	url = git://github.com/kana/vim-smartinput.git
+[submodule "janus/ultisnips"]
+	path = janus/ultisnips
+	url = git://github.com/SirVer/ultisnips.git
+[submodule "janus/neocomplcache"]
+	path = janus/neocomplcache
+	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
