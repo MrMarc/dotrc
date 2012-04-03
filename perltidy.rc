@@ -1,3 +1,12 @@
 --indent-columns=4
+-ci=2
+--maximum-consecutive-blank-lines=2
+--maximum-line-length=80
+-asc    # Add any missing optional semicolon at the end of a line
+-naws   # Don't add whitespace
+-nolc   # Long comments indented, even when this make the total line length "too long"
+-nbbc   # Don't add a blank line before comments
+-bar
+-nsbl
+-nsfs
 -ce
-

@@ -45,8 +45,7 @@ at_strikeoff=%{$'\e[29m'%}
 #PROMPT="
 #${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 #[${fg_green}%T${fg_white}]:${at_normal}"
-PROMPT="
-${fg_blue}%n@%m: ${at_reverse}[ %~ ]${at_reverseoff}${fg_white}
+PROMPT="${fg_blue}%n@%m: ${at_reverse}[ %~ ]${at_reverseoff}${fg_white}
 [${fg_red}%T${fg_white}]: ${at_normal}"
 
 # Set the auto completion on
