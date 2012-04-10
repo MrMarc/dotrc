@@ -26,23 +26,27 @@ if has("gui_running")
   " Remove the toolbar - don't like it
   set guioptions-=T
 
-  " Remap Command-T to PeepOpen when there's a GUI
   macmenu &File.New\ Tab key=<nop>
-  map <silent><D-t> <Plug>PeepOpen
-
-  " This command opens a Markdown file in Marked .
-  " Could be done based on filetype
-  :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-
 else
 
   map <D-t> :CtrlP<CR>
   " Enable mouse movement - nice with a trackpad
   set mouse=a
-
+  set ttymouse=xterm2
 endif
 
 color badwolf
+
+if has("mac")
+  " OSX specific plugins and functions
+
+  " Remap Command-T to PeepOpen when there's a GUI
+  map <silent><D-t> <Plug>PeepOpen
+
+  " This command opens a Markdown file in Marked .
+  " Could be done based on filetype
+  :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+endif
 
 if has("autocmd")
   " Auto load the changes to this file.
@@ -71,8 +75,9 @@ nmap ,v :edit ~/dotrc/vimrc<CR>
 map ,v :edit ~/dotrc/vimrc<CR>
 
 " Add my own mapping for CtrlP
-nmap ,t :CtrlP<CR>
-map ,t :CtrlP<CR>
+nmap ,t :CtrlP `pwd`<CR>
+map ,t :CtrlP `pwd`<CR>
+let g:ctrlp_working_path_mode = 0
 
 " Add values for MiniBufExplorer
 let g:miniBufExplModSelTarget = 1
