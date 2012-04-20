@@ -54,7 +54,8 @@ if has("autocmd")
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
-    au BufEnter *.pl setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
+    au BufEnter *.pl,*.pm setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
+    au BufEnter *.t setl foldmethod=indent foldcolumn=3 foldlevel=99 mouse=a complete-=i
   augroup END
   augroup marc_cpp_settings
     au BufEnter *.cpp setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a complete-=i

@@ -28,11 +28,27 @@ use Data::Dumper;
 endsnippet
 
 snippet dbstop "Make the debugger stop automatically"
-$DB::start = 1;
+$DB::signal = 1;
 endsnippet
 
 snippet hered
 my $${1:var} =<<"__${1/\w/\U$0\E/g}__";
 ${VISUAL}$2
 __${1/\w/\U$0\E/g}__
+endsnippet
+
+snippet it
+it '${1:text}' => sub {
+    $2
+};
+endsnippet
+
+snippet desc
+describe '${1:text}' => sub {
+    $2
+};
+endsnippet
+
+snippet ok
+ok($1,$2);
 endsnippet
