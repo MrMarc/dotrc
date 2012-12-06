@@ -94,3 +94,9 @@
 [submodule "janus/tabular"]
 	path = janus/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "janus/syntastic"]
+	path = janus/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "janus/vim-qargs"]
+	path = janus/vim-qargs
+	url = git://github.com/nelstrom/vim-qargs.git
