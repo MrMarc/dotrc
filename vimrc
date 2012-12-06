@@ -57,6 +57,12 @@ if has("autocmd")
     au BufEnter *.pl,*.pm setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
     au BufEnter *.t setl foldmethod=indent foldcolumn=3 foldlevel=99 mouse=a complete-=i
   augroup END
+
+  augroup marc_xml_settings
+    au BufEnter *.xsd,*.xml,*.xslt,*.xsl,*.in setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a 
+    au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+  augroup END
+
   augroup marc_cpp_settings
     au BufEnter *.cpp setl foldmethod=syntax foldcolumn=3 foldlevel=99 mouse=a complete-=i
   augroup END
@@ -65,11 +71,12 @@ endif
 filetype plugin on
 filetype indent on
 
-let perl_fold=1
-let perl_fold_blocks=1
+"let perl_fold=1
+"let perl_fold_blocks=1
 
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+let g:xml_syntax_folding=1    " XML
 
 " Editing this file often enough so add a shortcut
 nmap ,v :edit ~/dotrc/vimrc<CR>
@@ -154,6 +161,9 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
+" This is the bomb
+:vnoremap . :norm.<CR>
+
 " Try to use the home row escape as well
 inoremap jj <Esc>
 
@@ -193,3 +203,35 @@ let g:UltiSnipsDontReverseSearchPath="1"
 let g:UltiSnipsSnippetDirectories=["/Volumes/MacintoshHD/Users/marc/dotrc/MySnippets","Ultisnips"]
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 imap <silent><D-right> <C-R>=UltiSnips_JumpForwards()<CR>
+
+" Conque options
+let g:ConqueTerm_InsertOnEnter = 0
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_CloseOnEnd = 1
+
+function! GuardStart()
+ let g:guardterm = conque_term#open('guard start', ['botright split', 'resize 5'], 1)
+endfunction
+
+function! GuardStop()
+ call g:guardterm.writeln("q\n")
+endfunction
+
+map <Leader>gs :call GuardStart()<CR>
+
+map <silent><D-F12> <Plug>PeepOpen
+
+" key bindings
+map <silent><Leader>dd         :DBGRstart<CR>
+"map <silent><Leader><F12> :DBGRstart<SPACE>
+map <silent><Leader>ds         :DBGRstep<CR>
+map <silent><Leader>dn         :DBGRnext<CR>
+map <silent><Leader>dc         :DBGRcont<CR>                   " continue
+map <silent><Leader>db         :DBGRsetBreakPoint<CR>
+map <silent><Leader>dcl        :DBGRclearBreakPoint<CR>
+map <silent><Leader>dca        :DBGRclearAllBreakPoints<CR>
+map <Leader>dx/                :DBGRprint<SPACE>
+map <silent><Leader>dx         :DBGRprintExpand expand("<cWORD>")<CR> " value under cursor
+map <Leader>d/                 :DBGRcommand<SPACE>
+map <silent><Leader>dr         :DBGRrestart<CR>
+map <silent><Leader>dq         :DBGRquit<CR>

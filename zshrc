@@ -98,6 +98,9 @@ alias m='mvim --remote-silent'
 alias vim='mvim -v'
 alias vi='mvim -v'
 
+alias bup='brew update'
+alias bug='brew upgrade'
+
 export PATH=/usr/local/bin:/usr/local/sbin:/sbin:/opt/subversion/bin:$PATH
 
 "$HOME/.rvm/scripts/rvm" # Load RVM function

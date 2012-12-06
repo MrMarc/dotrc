@@ -6,7 +6,7 @@ set t_Co=256
 call janus#disable_plugin('snipmate')
 call janus#disable_plugin('snipmate-snipets')
 call janus#disable_plugin('perlomni')
-call janus#disable_plugin('buffergator')
+"call janus#disable_plugin('buffergator')
 call janus#disable_plugin('Command-T')
 call janus#disable_plugin('jdbvim')
 call janus#disable_plugin('easytags.vim')
