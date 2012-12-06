@@ -88,9 +88,6 @@
 [submodule "janus/ultisnips"]
 	path = janus/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
-[submodule "janus/neocomplcache"]
-	path = janus/neocomplcache
-	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
 [submodule "janus/tabular"]
 	path = janus/tabular
 	url = git://github.com/godlygeek/tabular.git
@@ -100,3 +97,6 @@
 [submodule "janus/vim-qargs"]
 	path = janus/vim-qargs
 	url = git://github.com/nelstrom/vim-qargs.git
+[submodule "janus/neocomplcache"]
+	path = janus/neocomplcache
+	url = git://github.com/Shougo/neocomplcache-snippets-complete.git

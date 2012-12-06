@@ -6,6 +6,14 @@ $$1 = ModifyInputValue( $$1, 0 );
 
 endsnippet
 
+snippet input "Format a new style Signiant variable - style 2"
+$tmp =<<'__${1/\w/\U$0\E/g}__';
+${VISUAL}$0
+__${1/\w/\U$0\E/g}__
+$inputContext{${1:var}} = ModifyInputValue( $tmp, 0 );
+
+endsnippet
+
 global !p
 def complete(t, opts):
   if t:
@@ -43,6 +51,14 @@ it '${1:text}' => sub {
 };
 endsnippet
 
+snippet trap
+trap{$1};
+endsnippet
+
+snippet like
+like($1,qr/$2/);
+endsnippet
+
 snippet desc
 describe '${1:text}' => sub {
     $2
@@ -51,4 +67,16 @@ endsnippet
 
 snippet ok
 ok($1,$2);
+endsnippet
+
+snippet bef
+before sub {
+    $1;
+};
+endsnippet
+
+snippet beach
+before each => sub {
+    $1;
+};
 endsnippet
