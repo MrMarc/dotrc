@@ -1,6 +1,3 @@
-[submodule "janus/badwolf"]
-	path = janus/badwolf
-	url = git://github.com/sjl/badwolf.git
 [submodule "janus/ShowMarks"]
 	path = janus/ShowMarks
 	url = git://github.com/VimEz/ShowMarks.git
@@ -100,3 +97,6 @@
 [submodule "janus/neocomplcache"]
 	path = janus/neocomplcache
 	url = git://github.com/Shougo/neocomplcache-snippets-complete.git
+[submodule "janus/badwolf"]
+	path = janus/badwolf
+	url = git://github.com/sjl/badwolf.git
