@@ -36,6 +36,7 @@ else
 endif
 
 color badwolf
+let g:badwolf_darkgutter = 1
 
 if has("mac")
   " OSX specific plugins and functions
