@@ -100,3 +100,9 @@
 [submodule "janus/badwolf"]
 	path = janus/badwolf
 	url = git://github.com/sjl/badwolf.git
+[submodule "janus/vim-gitgutter.git"]
+	path = janus/vim-gitgutter.git
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "janus/vim-obsession.git"]
+	path = janus/vim-obsession.git
+	url = git://github.com/tpope/vim-obsession.git

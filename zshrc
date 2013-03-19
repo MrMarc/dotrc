@@ -93,6 +93,28 @@ alias uc='scp -C -q /Users/marc/Documents/workspace/customizer/dist/signiant_cus
 alias bounce='ssh root@mgr2 /usr/signiant/dds/init/siginit restart sigjboss'
 alias uab='uc;uw;uj;bounce'
 
+# Borrowed from Brett Terpstra http://brettterpstra.com/2013/03/14/more-command-line-handiness/
+alias ql="qlmanage -p &>/dev/null"
+alias psgrep="ps Ao pid,comm|ruby -e 'puts STDIN.read.gsub(/^ *(\d+) .*?([^\/]+?$)/,\"\\\1: \\\2\")'|grep -iE"
+
+# ls archives (inspired by `extract`)
+lsz() {
+	if [ $# -ne 1 ]
+	then
+		echo "lsz filename.[tar,tgz,gz,zip,etc]"
+		return 1
+	fi
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2|*.tar.gz|*.tar|*.tbz2|*.tgz) tar tvf $1;;
+			*.zip)  unzip -l $1;;
+			*)      echo "'$1' unrecognized." ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+
 # Make VIM start-up correctly
 alias m='mvim --remote-silent'
 alias vim='mvim -v'
@@ -101,6 +123,9 @@ alias vi='mvim -v'
 alias bup='brew update'
 alias bug='brew upgrade'
 
+alias modules="/usr/signiant/dds/bin/perl/bin/perl -MFile::Find=find -MFile::Spec::Functions -Tlwe 'find { wanted => sub { print canonpath $_ if /\.pm\z/ }, no_chdir => 1 }, @INC' | sed 's|/usr/ddsperl/lib/||' | sed 's|site_perl/||' | sed 's|5.8.0/||' | sed 's|x86_64-linux-thread-multi/||' |  sed 's|/|::|g' | sed 's|.pm$||'"
+
 export PATH=/usr/local/bin:/usr/local/sbin:/sbin:/opt/subversion/bin:$PATH
+export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.0/libexec
 
 "$HOME/.rvm/scripts/rvm" # Load RVM function

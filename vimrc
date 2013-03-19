@@ -21,6 +21,12 @@ if has("gui_running")
   "set guifont=Menlo\ Bold:h15
   "set guifont=Inconsolata-dz\ for\ Powerline:h17
   "set guifont=Menlo\ for\ Powerline:h17
+
+  " This was my choice before
+  "set guifont=Consolas\ for\ Powerline:h17
+
+  " New powerline font setup
+  "set guifont=Inconsolata\ for\ Powerline:h20
   set guifont=Consolas\ for\ Powerline:h17
 
   " Remove the toolbar - don't like it
@@ -210,8 +216,10 @@ let g:ConqueTerm_InsertOnEnter = 0
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_CloseOnEnd = 1
 
+map <Leader>z :vsp<CR><C-W><Right>:A<CR>
+
 " Use 'the_silver_searcher' rather than 'ack'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
 function! GuardStart()
  let g:guardterm = conque_term#open('guard start', ['botright split', 'resize 5'], 1)
@@ -239,3 +247,6 @@ map <silent><Leader>dx         :DBGRprintExpand expand("<cWORD>")<CR> " value un
 map <Leader>d/                 :DBGRcommand<SPACE>
 map <silent><Leader>dr         :DBGRrestart<CR>
 map <silent><Leader>dq         :DBGRquit<CR>
+
+set encoding=utf-8
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/source_plugin.vim
