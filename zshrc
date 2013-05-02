@@ -93,6 +93,10 @@ alias uc='scp -C -q /Users/marc/Documents/workspace/customizer/dist/signiant_cus
 alias bounce='ssh root@mgr2 /usr/signiant/dds/init/siginit restart sigjboss'
 alias uab='uc;uw;uj;bounce'
 
+alias eclimd='/Applications/eclipse/eclimd'
+alias wip='cd /workspace/wip'
+alias dds_perl='/usr/signiant/dds/bin/perl/bin/perl'
+
 # Borrowed from Brett Terpstra http://brettterpstra.com/2013/03/14/more-command-line-handiness/
 alias ql="qlmanage -p &>/dev/null"
 alias psgrep="ps Ao pid,comm|ruby -e 'puts STDIN.read.gsub(/^ *(\d+) .*?([^\/]+?$)/,\"\\\1: \\\2\")'|grep -iE"

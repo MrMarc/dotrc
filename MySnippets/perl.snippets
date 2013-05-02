@@ -7,20 +7,41 @@ $$1 = ModifyInputValue( $$1, 0 );
 endsnippet
 
 snippet input "Format a new style Signiant variable - style 2"
-$tmp =<<'__${1/\w/\U$0\E/g}__';
+$inputContext{${1:var}} = ModifyInputValue( <<'__${1/\w/\U$0\E/g}__', 0 );
 ${VISUAL}$0
 __${1/\w/\U$0\E/g}__
-$inputContext{${1:var}} = ModifyInputValue( $tmp, 0 );
+
+endsnippet
+
+snippet dif "die if"
+die("${1:var}\n")
+  if (${2:var});
 
 endsnippet
 
 global !p
+import re
+
 def complete(t, opts):
   if t:
     opts = [ m[len(t):] for m in opts if m.startswith(t) ]
   if len(opts) == 1:
     return opts[0]
   return '('+'|'.join(opts)+')'
+
+def insideValidate(t):
+  pattern = re.compile("^(\\$inputContext\\{(.*?)\\}).*?",re.MULTILINE)
+
+  retText = ''
+  dieLines = '\t# Test the values\n'
+  splLines = '\t# Output the values\n'
+  if t:
+    for (match,text) in re.findall(pattern, t):
+      splLines += '\tSigPrintLog("'+text+': [' + match + ']",LOGINFO);\n'
+      dieLines += '\tdie("No '+text+' provided\\n")\n\t\tif (' + match + ' eq \'\');\n'
+    retText = dieLines + "\n" + splLines
+
+  return retText
 endglobal
 
 snippet SPL "Format a SigPrintLog line"
@@ -79,4 +100,9 @@ snippet beach
 before each => sub {
     $1;
 };
+endsnippet
+
+snippet valid "Create a validateInputs function"
+${VISUAL}$0
+`!p snip.rv = 'sub validateInputs($) {\n\tmy $inputs = $_[0];\n\n' + insideValidate(snip.v.text) + '\n\treturn $inputs\n}\n'`
 endsnippet

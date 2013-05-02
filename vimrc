@@ -41,7 +41,7 @@ else
   set ttymouse=xterm2
 endif
 
-color badwolf
+color marcRailscasts
 let g:badwolf_darkgutter = 1
 
 if has("mac")
@@ -55,14 +55,31 @@ if has("mac")
   :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 endif
 
+function! Num2S(num, len)
+    let filler = "                                                            "
+    let text = '' . a:num
+    return strpart(filler, 1, a:len - strlen(text)) . text
+endfunction
+
+function! JavaFoldText()
+    let sub = substitute(getline(v:foldstart), '/\*\|\*/\|{{{\d\=', '', 'g')
+    let diff = v:foldend - v:foldstart + 1
+    return  '+' . v:folddashes . '[' . Num2S(diff,3) . ']' . sub
+endfunction
+
 if has("autocmd")
   " Auto load the changes to this file.
   autocmd bufwritepost ~/dotrc/vimrc source ~/dotrc/vimrc
 
   " Change the folding settings for Perl code
   augroup marc_perl_settings
-    au BufEnter *.pl,*.pm setl foldmethod=manual foldcolumn=3 foldlevel=99 mouse=a complete-=i
+    au BufEnter *.pl,*.pm setl foldmethod=manual foldtext=JavaFoldText() foldcolumn=3 foldlevel=99 mouse=a complete-=i
     au BufEnter *.t setl foldmethod=indent foldcolumn=3 foldlevel=99 mouse=a complete-=i
+  augroup END
+
+  " Change the folding settings for Java code
+  augroup marc_java_settings
+    au BufEnter,BufRead *.java setl foldmethod=manual foldtext=JavaFoldText() foldcolumn=3 foldlevel=99 mouse=a complete-=i
   augroup END
 
   augroup marc_xml_settings
@@ -78,8 +95,8 @@ endif
 filetype plugin on
 filetype indent on
 
-"let perl_fold=1
-"let perl_fold_blocks=1
+let perl_fold=1
+let perl_fold_blocks=1
 
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
@@ -201,6 +218,15 @@ perl << EOF
  $curbuf->Set($pos[0],$encvalue)
 EOF
 endfunction
+
+function! EclimRunning() 
+  if exists('*eclim#PingEclim') 
+     let running = eclim#PingEclim(0) 
+     return running 
+  else 
+     return 0 
+  endif 
+endfunction 
 
 map <Leader>H :call HTMLDecode()<CR>
 map <Leader>h :call HTMLEncode()<CR>

@@ -106,3 +106,12 @@
 [submodule "janus/vim-obsession.git"]
 	path = janus/vim-obsession.git
 	url = git://github.com/tpope/vim-obsession.git
+[submodule "janus/harlequin.git"]
+	path = janus/harlequin.git
+	url = https://github.com/nielsmadan/harlequin.git
+[submodule "janus/neosnippet"]
+	path = janus/neosnippet
+	url = https://github.com/Shougo/neosnippet
+[submodule "janus/numbers.vim.git"]
+	path = janus/numbers.vim.git
+	url = https://github.com/myusuf3/numbers.vim.git
