@@ -102,6 +102,9 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 let g:xml_syntax_folding=1    " XML
 
+" Don't let the cursor get to 14 lines or characters from the edge
+set so=14
+
 " Editing this file often enough so add a shortcut
 nmap ,v :edit ~/dotrc/vimrc<CR>
 map ,v :edit ~/dotrc/vimrc<CR>
@@ -275,4 +278,37 @@ map <silent><Leader>dr         :DBGRrestart<CR>
 map <silent><Leader>dq         :DBGRquit<CR>
 
 set encoding=utf-8
+
+AddTabularPattern vdec /\S\+;
+AddTabularPattern arrow /=/l1l0
+
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/source_plugin.vim
+
+let g:path_to_matcher = "/usr/local/bin/matcher"
+
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
+
+let g:ctrlp_match_func = { 'match': 'GoodMatch' }
+
+function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
+
+  " Create a cache file if not yet exists
+  let cachefile = ctrlp#utils#cachedir().'/matcher.cache'
+  if !( filereadable(cachefile) && a:items == readfile(cachefile) )
+    call writefile(a:items, cachefile)
+  endif
+  if !filereadable(cachefile)
+    return []
+  endif
+
+  " a:mmode is currently ignored. In the future, we should probably do
+  " something about that. the matcher behaves like "full-line".
+  let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
+  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
+    let cmd = cmd.'--no-dotfiles '
+  endif
+  let cmd = cmd.a:str
+
+  return split(system(cmd), "\n")
+
+endfunction

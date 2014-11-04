@@ -1,8 +1,7 @@
 snippet sigvar "Format a Signiant variable"
-my $${1:var} =<<'__${1/\w/\U$0\E/g}__';
+my $${1:var} = ModifyInputValue( <<'__${1/\w/\U$0\E/g}__', 0 );
 ${VISUAL}$0
 __${1/\w/\U$0\E/g}__
-$$1 = ModifyInputValue( $$1, 0 );
 
 endsnippet
 
@@ -105,4 +104,32 @@ endsnippet
 snippet valid "Create a validateInputs function"
 ${VISUAL}$0
 `!p snip.rv = 'sub validateInputs($) {\n\tmy $inputs = $_[0];\n\n' + insideValidate(snip.v.text) + '\n\treturn $inputs\n}\n'`
+endsnippet
+
+snippet getsigxml
+sub getSigXMLElements {
+    my ($xmlFL) = @_;
+    my @fileList;
+
+    if (!IsSigListXmlFormat($xmlFL)) {
+        # SourceData is in legacy format...
+        $xmlFL =~ s/,\\s+/,/g; # in case it comes in as comma-space instead of just comma
+        @fileList = SolutionSplitPaths($xmlFL,',');
+    } else {
+        # Deconstruct SigXML file
+        my $XMLPathListType = '';
+        my $Xattrs          = '';
+
+        my @elementArray = ();
+
+        # Unpack it into an array
+        die("Input file list is not parseable\n")
+          if ( SigListXMLParse( $xmlFL, \\$XMLPathListType, \@elementArray, \\$Xattrs ) );
+
+        @fileList =  SigListGetELementsByAttribute( \@elementArray, 'V' );
+    }
+
+    # return the ref
+    return \@fileList;
+}
 endsnippet
