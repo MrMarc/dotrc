@@ -22,7 +22,6 @@ cask install flip4mac
 cask install flux
 cask install garmin-communicator
 cask install garmin-training-center
-cask install google-chrome
 cask install grandperspective
 cask install handbrake
 cask install hazel
@@ -33,15 +32,13 @@ cask install java
 cask install jawbone-updater
 cask install karabiner
 cask install launchbar
-cask install mediainfo
 cask install nvalt
-cask install padre
-cask install pandoc
 cask install parallels
 cask install pdfpen
 cask install peepopen
 cask install perian
 cask install plex-home-theater
+cask install plex-media-server
 cask install rdio
 cask install rescuetime
 cask install sabnzbd
@@ -58,3 +55,7 @@ cask install textexpander
 cask install transmission
 cask install trim-enabler
 cask install vlc
+
+tap caskroom/versions
+
+cask install google-chrome-canary
