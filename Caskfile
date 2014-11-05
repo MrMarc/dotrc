@@ -33,6 +33,7 @@ cask install jawbone-updater
 cask install karabiner
 cask install launchbar
 cask install nvalt
+cask install onepassword
 cask install parallels
 cask install pdfpen
 cask install peepopen
