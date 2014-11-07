@@ -2,6 +2,7 @@
 install caskroom/cask/brew-cask
 
 cask install adium
+cask install airdisplay
 cask install airfoil
 cask install airparrot
 cask install airserver

@@ -1,8 +1,10 @@
+cleanup
+
 # Setup the taps
-tap homebrew-boneyard
-tap homebrew-dupes
-tap homebrew-games
-tap homebrew-versions
+tap homebrew/boneyard
+tap homebrew/dupes
+tap homebrew/games
+tap homebrew/versions
 
 # Install the packages
 install ack
@@ -189,3 +191,5 @@ install yajl
 install yasm
 install youtube-dl
 install zsh-syntax-highlighting
+
+cleanup
